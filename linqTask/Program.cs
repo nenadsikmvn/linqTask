@@ -39,12 +39,8 @@ iz liste kupaca izdvaja one cije ima sadrzi slovo a i sortira ih po imenu
 
             #region MetodeZadatak2
             k1.FluentVsQuery();
-
-
-
-
             k1.Grupisanje(k1.ListaKupca());
-
+            k1.Ulancavanje();
             #endregion
             Console.ReadLine();
 

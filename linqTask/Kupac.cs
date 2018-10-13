@@ -27,7 +27,7 @@ namespace linqTask
                               new Kupac { KupacId = 9, Ime = "Slavko", Godine = 25, Grad = "Novi Sad" },
                               new Kupac { KupacId = 10, Ime = "Pavko", Godine = 30, Grad = "Becej" },
                               new Kupac { KupacId = 11, Ime = "Istvan", Godine = 27, Grad = "Cenej" },
-                              new Kupac { KupacId = 12, Ime = "Istvan", Godine = 29, Grad = "Beograd" },
+                              new Kupac { KupacId = 12, Ime = "Borko", Godine = 29, Grad = "Beograd" },
                               new Kupac { KupacId = 13, Ime = "Mladen", Godine = 30, Grad = "Zrenjanin" },
                               new Kupac { KupacId = 14, Ime = "Mladen", Godine = 25, Grad = "Zrenjanin" },
                               new Kupac { KupacId = 15, Ime = "Dario", Godine = 30, Grad = "Arandjelovac" },
@@ -154,6 +154,24 @@ namespace linqTask
 
         }
 
+        public void Ulancavanje()
+        {
+            Console.WriteLine("\nPronalazi sva imena koja u sebi imaju slovo I malo ili velika i sortira ih po opadajucem broju slova: \n");
+
+
+            string[] imena = { "Bojana", "Ivana", "Draga", "Milica", "Tina" };
+            //pronalazi sva imena koja u sebi imaju slovo i malo ili velika
+            //sortira ta imena po duzini u op
+
+            IEnumerable<string> query = imena.Where(i => i.Contains("i") || i.Contains("I"))
+                .OrderByDescending(i=>imena.Length);
+            foreach (string i in query)
+            {
+                Console.WriteLine(i.ToArray());
+            }
+               
+
+        }
 
 
 
