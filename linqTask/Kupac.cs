@@ -125,7 +125,7 @@ namespace linqTask
                               new Kupac { KupacId = 4, Ime = "Marko", Godine = 55, Grad = "Becej" },
                               new Kupac { KupacId = 5, Ime = "Mirjana", Godine = 19, Grad = "Beograd" }
         };
-
+            Console.WriteLine("\nKupci poredjani po imenu ali i po godinama: ");
             var orderByResult = from k in kupac
                                 orderby k.Ime, k.Godine
                                 select k;

@@ -34,7 +34,6 @@ iz liste kupaca izdvaja one cije ima sadrzi slovo a i sortira ih po imenu
             #endregion
 
             Console.WriteLine("\n~~~~~~~~~~~~ZADATAK 2~~~~~~~~~~~~");
-            Console.WriteLine("Fluent sintaksa");
 
 
             #region MetodeZadatak2
@@ -42,8 +41,8 @@ iz liste kupaca izdvaja one cije ima sadrzi slovo a i sortira ih po imenu
             k1.Grupisanje(k1.ListaKupca());
             k1.Ulancavanje();
             #endregion
-            Console.ReadLine();
 
+            Console.ReadLine();
         }
 
 
