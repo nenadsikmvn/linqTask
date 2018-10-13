@@ -23,7 +23,7 @@ iz liste kupaca izdvaja one cije ima sadrzi slovo a i sortira ih po imenu
         {
             Kupac k1 = new Kupac();
             //zadatak 1
-            #region KupacMetode
+            #region MetodeZadatak1
 
             k1.Ispis(k1.ListaKupca());
             k1.MetodaID(k1.ListaKupca());
@@ -37,9 +37,15 @@ iz liste kupaca izdvaja one cije ima sadrzi slovo a i sortira ih po imenu
             Console.WriteLine("Fluent sintaksa");
 
 
-
+            #region MetodeZadatak2
             k1.FluentVsQuery();
+
+
+
+
             k1.Grupisanje(k1.ListaKupca());
+
+            #endregion
             Console.ReadLine();
 
         }

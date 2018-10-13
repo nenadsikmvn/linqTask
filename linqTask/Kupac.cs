@@ -21,13 +21,17 @@ namespace linqTask
                               new Kupac { KupacId = 3, Ime = "Nemanja", Godine = 42, Grad = "Bijeljina" },
                               new Kupac { KupacId = 4, Ime = "Pera", Godine = 50, Grad = "Becej" },
                               new Kupac { KupacId = 5, Ime = "Stojan", Godine = 19, Grad = "Beograd" },
-                              new Kupac { KupacId = 6, Ime = "Bojan", Godine = 102, Grad = "Pejicevi Salasi" },
-                              new Kupac { KupacId = 7, Ime = "Ivan", Godine = 15, Grad = "Novi Sad" },
-                              new Kupac { KupacId = 8, Ime = "Darko", Godine = 22, Grad = "Beograd" },
-                              new Kupac { KupacId = 9, Ime = "Slavko", Godine = 55, Grad = "Novi Sad" },
-                              new Kupac { KupacId = 10, Ime = "Pavko", Godine = 32, Grad = "Becej" },
+                              new Kupac { KupacId = 6, Ime = "Bojan", Godine = 102, Grad = "Beograd" },
+                              new Kupac { KupacId = 7, Ime = "Ivan", Godine = 21, Grad = "Novi Sad" },
+                              new Kupac { KupacId = 8, Ime = "Darko", Godine = 23, Grad = "Beograd" },
+                              new Kupac { KupacId = 9, Ime = "Slavko", Godine = 25, Grad = "Novi Sad" },
+                              new Kupac { KupacId = 10, Ime = "Pavko", Godine = 30, Grad = "Becej" },
                               new Kupac { KupacId = 11, Ime = "Istvan", Godine = 27, Grad = "Cenej" },
-                              new Kupac { KupacId = 12, Ime = "Mladen", Godine = 29, Grad = "Pejicevi Salasi" },
+                              new Kupac { KupacId = 12, Ime = "Istvan", Godine = 29, Grad = "Beograd" },
+                              new Kupac { KupacId = 13, Ime = "Mladen", Godine = 30, Grad = "Zrenjanin" },
+                              new Kupac { KupacId = 14, Ime = "Mladen", Godine = 25, Grad = "Zrenjanin" },
+                              new Kupac { KupacId = 15, Ime = "Dario", Godine = 30, Grad = "Arandjelovac" },
+                              new Kupac { KupacId = 16, Ime = "Todor", Godine = 30, Grad = "Becej" },
                   };
 
             return kupac;
@@ -108,9 +112,7 @@ namespace linqTask
             {
                 Console.WriteLine(k.Ime);
             }
-
         }
-
 
         public void FluentVsQuery()
         {
@@ -122,8 +124,6 @@ namespace linqTask
                               new Kupac { KupacId = 3, Ime = "Marko", Godine = 42, Grad = "Bijeljina" },
                               new Kupac { KupacId = 4, Ime = "Marko", Godine = 55, Grad = "Becej" },
                               new Kupac { KupacId = 5, Ime = "Mirjana", Godine = 19, Grad = "Beograd" }
-
-
         };
 
             var orderByResult = from k in kupac
@@ -133,23 +133,27 @@ namespace linqTask
             {
                 Console.WriteLine("{0},{1}", k.Ime, k.Godine);
             }
-
-
         }
 
         public void Grupisanje(List<Kupac> kupac)
+
         {
-            //var query = from k in kupac
-            //            group k by k.Godine into Group;
-
-            //foreach (var k in query)
-            //{
-            //    Console.WriteLine(k.Key);
-
-            //}
+            var grupeKupca = from k in kupac
+                             group k by k.Godine;
+            Console.WriteLine("\nGrupisi kupce po starosnom dobu: \n");
+            foreach (var group in grupeKupca)
+            {
+                Console.WriteLine("\nStarosno doba kupca: {0}", group.Key);
+                foreach (var imeKupca in group)
+                {
+                    Console.WriteLine("Ime kupca: "+imeKupca.Ime + "\t");
+                    
+                }
+            }
 
 
         }
+
 
 
 
@@ -163,9 +167,6 @@ namespace linqTask
             Console.WriteLine("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~\t");
             Console.WriteLine("Broj kupaca je trenutno {0}", kupac.Count.ToString());
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~\t");
-
-
         }
-
     }
 }
