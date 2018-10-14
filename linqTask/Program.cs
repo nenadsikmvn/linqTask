@@ -22,7 +22,7 @@ iz liste kupaca izdvaja one cije ima sadrzi slovo a i sortira ih po imenu
         static void Main(string[] args)
         {
             Kupac k1 = new Kupac();
-            //zadatak 1
+
             #region MetodeZadatak1
 
             k1.Ispis(k1.ListaKupca());
